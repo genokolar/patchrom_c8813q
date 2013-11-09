@@ -59898,17 +59898,6 @@
     throw v0
 
     :cond_0
-    invoke-direct {p0, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkRunningCompatibility(Landroid/content/Intent;Ljava/lang/String;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_miui_0
-
-    const/4 v8, 0x0
-
-    return-object v8
-
-    :cond_miui_0
     monitor-enter p0
 
     :try_start_0
@@ -63158,6 +63147,17 @@
     throw v0
 
     :cond_0
+    invoke-direct {p0, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkRunningCompatibility(Landroid/content/Intent;Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_miui_0
+
+    const/4 v8, 0x0
+
+    return-object v8
+
+    :cond_miui_0
     monitor-enter p0
 
     :try_start_0
